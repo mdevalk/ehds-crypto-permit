@@ -1,0 +1,39 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments (covers common names)
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Package/build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+*.dist-info/
+*.whl
+
+# Cache and temp files
+.pytest_cache/
+.coverage
+.coverage.*
+.hypothesis/
+.mypy_cache/
+.dmypy.json
+.pytype/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# pyenv version file
+.python-version
