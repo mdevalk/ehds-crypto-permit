@@ -1,0 +1,87 @@
+{
+  "permitId": "hdab-nl-2025-001234",
+  "issuer": "HDAB-NL",
+  "issueDate": "2025-12-24T10:00:00Z",
+  "validFrom": "2025-12-24T00:00:00Z",
+  "validUntil": "2026-12-24T23:59:59Z",
+  "applicationId": "PROJ-2025-ABC",
+  "analysisMode": "deterministic_pseudonymization",
+  "purpose": "Epidemiological study on cardiovascular risk factors in the Dutch population (2020–2025 cohort)",
+
+  "dataUsers": [
+    {
+      "id": "urn:eidas:nl:researcher:alice.vanderlaan",
+      "name": "Alice van der Laan",
+      "organization": "University Medical Center Utrecht",
+      "role": "principal_investigator"
+    },
+    {
+      "id": "urn:eidas:nl:researcher:bob.jansen",
+      "name": "Bob Jansen",
+      "organization": "University Medical Center Utrecht",
+      "role": "data_analyst"
+    }
+  ],
+
+  "dataHolders": [
+    {
+      "id": "DH-GP-001",
+      "name": "Dutch General Practitioners Registry",
+      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...\n-----END PUBLIC KEY-----"
+    },
+    {
+      "id": "DH-HOSPITAL-002",
+      "name": "National Hospital Admission Registry",
+      "publicKey": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA...\n-----END PUBLIC KEY-----"
+    }
+  ],
+
+  "wrappedSharedSecrets": [
+    {
+      "dataHolderId": "DH-GP-001",
+      "algorithm": "rsa-oaep-256",
+      "encryptedKey": "base64-encoded-ciphertext-for-DH-GP-001..."
+    },
+    {
+      "dataHolderId": "DH-HOSPITAL-002",
+      "algorithm": "rsa-oaep-256",
+      "encryptedKey": "base64-encoded-ciphertext-for-DH-HOSPITAL-002..."
+    }
+  ],
+
+  "datasets": [
+    {
+      "dataHolderId": "DH-GP-001",
+      "datasetId": "GP-RECORDS-2020-2025",
+      "description": "Primary care electronic health records",
+      "storageLocation": "s3://ehds-spe-input/project-abc/gp-data/"
+    },
+    {
+      "dataHolderId": "DH-HOSPITAL-002",
+      "datasetId": "HOSP-ADMISSIONS-2020-2025",
+      "description": "Hospital admission and discharge records",
+      "storageLocation": "s3://ehds-spe-input/project-abc/hospital-data/"
+    }
+  ],
+
+  "storageLocations": [
+    {
+      "dataHolderId": "DH-GP-001",
+      "type": "object_storage",
+      "uri": "s3://ehds-spe-input/project-abc/gp-data/"
+    },
+    {
+      "dataHolderId": "DH-HOSPITAL-002",
+      "type": "object_storage",
+      "uri": "s3://ehds-spe-input/project-abc/hospital-data/"
+    }
+  ],
+
+  "outputController": {
+    "id": "urn:eidas:nl:outputchecker:carol.willems",
+    "name": "Carol Willems",
+    "organization": "Netherlands Health Data Institute"
+  },
+
+  "signature": "base64-encoded-detached-signature-over-canonical-json..."
+}
