@@ -55,7 +55,7 @@ class DataHolder:
         raise ValueError(f"No encrypted key entry found for holder {self.name}")
 
     def pseudonymize_identifier(self, identifier: str, domain: str, K: bytes) -> str:
-        """Deterministische pseudonym met HMAC-SHA256."""
+        """generate pseudonym HMAC-SHA256."""
         message = (identifier + domain).encode("utf-8")
         return hmac.new(K, message, hashlib.sha256).hexdigest()
 
@@ -64,16 +64,17 @@ class DataHolder:
         signed_permit_json: bytes,
         identifiers: list[str]
     ) -> list[str]:
-        """Volledig proces: verifiëren → expiratie check → K herstellen → pseudonimiseren."""
+        
+        # verify
         signed_permit = json.loads(signed_permit_json.decode("utf-8"))
         permit_payload = self._verify_permit(signed_permit)
 
-        # Expiratie controle
+        # check expiration
         valid_until = datetime.fromisoformat(permit_payload["valid_until"])
         if valid_until < datetime.now(timezone.utc):
             raise ValueError("Permit has expired")
 
-        # Herstel master K en pseudonimiseer
+        # recover K and pseudonymize
         master_K = self._recover_master_k(permit_payload)
         domain = permit_payload["domain"]
 

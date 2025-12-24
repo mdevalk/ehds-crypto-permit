@@ -4,7 +4,7 @@
   "issueDate": "2025-12-24T10:00:00Z",
   "validFrom": "2025-12-24T00:00:00Z",
   "validUntil": "2026-12-24T23:59:59Z",
-  "applicationId": "PROJ-2025-ABC",
+  "applicationId": "APP-2025-ABC",
   "analysisMode": "deterministic_pseudonymization",
   "purpose": "Epidemiological study on cardiovascular risk factors in the Dutch population (2020–2025 cohort)",
 
@@ -53,14 +53,12 @@
     {
       "dataHolderId": "DH-GP-001",
       "datasetId": "GP-RECORDS-2020-2025",
-      "description": "Primary care electronic health records",
-      "storageLocation": "s3://ehds-spe-input/project-abc/gp-data/"
+      "description": "Primary care electronic health records"
     },
     {
       "dataHolderId": "DH-HOSPITAL-002",
       "datasetId": "HOSP-ADMISSIONS-2020-2025",
-      "description": "Hospital admission and discharge records",
-      "storageLocation": "s3://ehds-spe-input/project-abc/hospital-data/"
+      "description": "Hospital admission and discharge records"
     }
   ],
 
@@ -68,20 +66,20 @@
     {
       "dataHolderId": "DH-GP-001",
       "type": "object_storage",
-      "uri": "s3://ehds-spe-input/project-abc/gp-data/"
+      "uri": "s3://ehds/nl/APP-2025-ABC/GP-RECORDS-2020-2025/"
     },
     {
       "dataHolderId": "DH-HOSPITAL-002",
       "type": "object_storage",
-      "uri": "s3://ehds-spe-input/project-abc/hospital-data/"
+      "uri": "s3://ehds/nl/APP-2025-ABC/HOSP-ADMISSIONS-2020-2025/"
     }
   ],
 
   "outputController": {
-    "id": "urn:eidas:nl:outputchecker:carol.willems",
-    "name": "Carol Willems",
+    "id": "urn:eidas:nl:outputchecker:carola.willems",
+    "name": "Carola Willems",
     "organization": "Netherlands Health Data Institute"
   },
 
-  "signature": "base64-encoded-detached-signature-over-canonical-json..."
+  "signature": "base64-encoded-detached-signature.."
 }

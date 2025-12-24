@@ -1,4 +1,4 @@
-# A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space
+# A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space (EHDS)
 
 [![EHDS Proposal](https://img.shields.io/badge/EHDS-Proposal-blue)](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32025R0327)
 [![Whitepaper](https://img.shields.io/badge/View-Whitepaper-blue?logo=github)](WHITEPAPER.md)
@@ -7,26 +7,29 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 
 
-### Overview
+### Introduction
 
 This repository contains a proof-of-concept implementation of a **cryptographic data-permit mechanism** for secure data exchange and pseudonymization across data-holder environments governed by a Health Data Access Body (HDAB), in line with the European Health Data Space (EHDS) Regulation (EU) 2025/327.
 
-The mechanism transforms the standard EHDS data permit into an **active cryptographic coordination token**, enabling secure exchange and combination of health from different sources while keeping personal identifiers (like BSN, the Dutch Citizen Service Number) decentralized at the data holders.
+The mechanism transforms the EHDS data permit issued by a Health Data Access Body (HDAB) into an **active cryptographic coordination token**, enabling secure exchange and combination of healthdata from different sources while keeping personal identifiers (ie. BSN (the Dutch Citizen Service Number)) decentralized at the data holders.
 
-This proof-of-concept repository is accompanied by a detailed whitepaper that describes the full protocol design, security considerations, EHDS compliance rationale, threat model, and planned extensions for advanced privacy-preserving analysis modes. 
+This proof-of-concept code is accompanied by a detailed whitepaper that describes the full protocol design, security considerations, EHDS compliance rationale, and potential extensions for additional analysis modes.
 
-**A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space**  
-December 2025
+### Whitepaper
 
-[Read the whitepaper here](WHITEPAPER.md)
+[A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space](WHITEPAPER.md)
 
 ### Quick Start
 
 ```bash
+
+# liboqs may need to be built from source using the Open Quantum Safe repository.
+./install_oqs.sh
+
 # Install dependencies
 pip install -r requirements.txt
 
-# Classical RSA Demo (deterministic distributed pseudonymization)
+# Classic RSA Demo (deterministic distributed pseudonymization)
 python demo.py
 
 # Post-Quantum Demo (deterministic distributed pseudonymization)

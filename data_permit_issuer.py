@@ -22,10 +22,10 @@ class DataPermitIssuer:
         validity_years: int = 1,
         include_raw_k: bool = False
     ) -> dict:
-        # 1. Generate master shared secret K
+        # Generate master shared secret K
         master_K = os.urandom(32)
 
-        # 2. For each holder: encapsulate + encrypt master_K with derived key
+        # For each holder: encapsulate + encrypt master_K with derived key
         encrypted_keys = []
         for holder in data_holders:
             kem = oqs.KeyEncapsulation("ML-KEM-768")
@@ -46,7 +46,7 @@ class DataPermitIssuer:
                 "encrypted_master_k_base64": base64.b64encode(ct).decode("utf-8")
             })
 
-        # 3. Build payload and sign
+        # Build payload and sign
         issued_at = datetime.now(timezone.utc)
         valid_until = issued_at + relativedelta(years=validity_years)
 
@@ -58,7 +58,6 @@ class DataPermitIssuer:
             "encrypted_keys": encrypted_keys
         }
 
-        # Optional debug print (fixed)
         print(">>>>>> Permit payload (before signing):")
         print(json.dumps(permit_payload, indent=2))
 

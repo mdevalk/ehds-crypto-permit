@@ -11,6 +11,6 @@ def generate_ml_kem_keypair():
 def generate_ml_dsa_keypair():
     """Generate ML-DSA-65 keypair."""
     sig = oqs.Signature("ML-DSA-65")
-    public_key = sig.generate_keypair()  # Must call this first
-    secret_key = sig.export_secret_key()  # Now available
+    public_key = sig.generate_keypair()
+    secret_key = sig.export_secret_key()
     return {"public_key": public_key, "secret_key": secret_key}
