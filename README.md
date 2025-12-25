@@ -7,7 +7,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/)
 
 
-### Introduction
+## Introduction
 
 This repository contains a proof-of-concept implementation of a **cryptographic data-permit mechanism** for secure data exchange and pseudonymization across data-holder environments governed by a Health Data Access Body (HDAB), in line with the European Health Data Space (EHDS) Regulation (EU) 2025/327.
 
@@ -15,15 +15,26 @@ The mechanism transforms the EHDS data permit issued by a Health Data Access Bod
 
 This proof-of-concept code is accompanied by a detailed whitepaper that describes the full protocol design, security considerations, EHDS compliance rationale, and potential extensions for additional analysis modes.
 
-### Whitepaper
+## Repository Overview
+
+```text
+ehds-crypto-permit/
+├── data_permit_issuer.py  # Minimal permit issuer (HDAB)
+├── data_holder.py         # Minimal data Holder
+├── utils.py               # Utility functions keypair generation 
+├── demo_rsa.py            # PoC demo using on RSA
+└── demo_pq.py             # PoC demo based on KEM/DSA (post-quantum)
+```
+
+## Whitepaper
 
 [A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space](WHITEPAPER.md)
 
-### Quick Start
+## Quick Start
 
 ```bash
 
-# liboqs may need to be built from source using the Open Quantum Safe repository.
+# liboqs may need to be built from source
 ./install_oqs.sh
 
 # Install dependencies

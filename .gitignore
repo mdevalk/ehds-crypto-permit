@@ -31,7 +31,7 @@ dist/
 .mypy_cache/
 .dmypy.json
 .pytype/
-.DS_Store
+.DS_StoreGithub
 
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints

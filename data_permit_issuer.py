@@ -10,6 +10,10 @@ from cryptography.hazmat.primitives.ciphers.aead import AESGCM
 import oqs
 
 class DataPermitIssuer:
+    """
+    A minimal post-quantum permit issuer (HDAB)
+    """
+
     def __init__(self, issuer_secret_key: bytes):
         self.sig = oqs.Signature("ML-DSA-65", issuer_secret_key)
 
