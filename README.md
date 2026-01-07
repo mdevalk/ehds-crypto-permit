@@ -40,9 +40,9 @@ ehds-crypto-permit/
 # Install dependencies
 pip install -r requirements.txt
 
-# Classic RSA Demo (deterministic distributed pseudonymization)
+# Classic RSA Demo (deterministic pseudonymization)
 python demo.py
 
-# Post-Quantum Demo (deterministic distributed pseudonymization)
+# Post-Quantum Demo (deterministic pseudonymization)
 python demo_pq.py
 ```
