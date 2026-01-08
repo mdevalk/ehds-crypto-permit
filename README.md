@@ -15,6 +15,10 @@ The mechanism transforms the EHDS data permit issued by a Health Data Access Bod
 
 This proof-of-concept code is accompanied by a detailed whitepaper that describes the full protocol design, security considerations, EHDS compliance rationale, and potential extensions for additional analysis modes.
 
+## Whitepaper
+
+[A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space](WHITEPAPER.md)
+
 ## Repository Overview
 
 ```text
@@ -25,10 +29,6 @@ ehds-crypto-permit/
 ├── demo_rsa.py            # PoC demo using on RSA
 └── demo_pq.py             # PoC demo based on KEM/DSA (post-quantum)
 ```
-
-## Whitepaper
-
-[A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space](WHITEPAPER.md)
 
 ## Quick Start
 
