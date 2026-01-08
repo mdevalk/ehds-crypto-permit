@@ -19,17 +19,6 @@ This proof-of-concept code is accompanied by a detailed whitepaper that describe
 
 [A Cryptographic Data Permit Mechanism for Secure Secondary Use of Health Data in the European Health Data Space](WHITEPAPER.md)
 
-## Repository Overview
-
-```text
-ehds-crypto-permit/
-├── data_permit_issuer.py  # Minimal permit issuer (HDAB)
-├── data_holder.py         # Minimal data Holder
-├── utils.py               # Utility functions keypair generation 
-├── demo_rsa.py            # PoC demo using on RSA
-└── demo_pq.py             # PoC demo based on KEM/DSA (post-quantum)
-```
-
 ## Quick Start
 
 ```bash
@@ -45,4 +34,15 @@ python demo.py
 
 # Post-Quantum Demo (deterministic pseudonymization)
 python demo_pq.py
+```
+
+## Repository Overview
+
+```text
+ehds-crypto-permit/
+├── data_permit_issuer.py  # Minimal permit issuer (HDAB)
+├── data_holder.py         # Minimal data Holder
+├── utils.py               # Utility functions keypair generation 
+├── demo_rsa.py            # PoC demo using on RSA
+└── demo_pq.py             # PoC demo based on KEM/DSA (post-quantum)
 ```
