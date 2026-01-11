@@ -11,7 +11,7 @@
 
 This repository contains a proof-of-concept implementation of a **cryptographic data-permit mechanism** for secure data exchange and pseudonymization across data-holder environments governed by a Health Data Access Body (HDAB), in line with the European Health Data Space (EHDS) Regulation (EU) 2025/327.
 
-The mechanism transforms the EHDS data permit issued by a Health Data Access Body (HDAB) into an **active cryptographic coordination token**, enabling secure exchange and combination of healthdata from different sources while keeping personal identifiers (ie. BSN (the Dutch Citizen Service Number)) decentralized at the data holders.
+The mechanism transforms the EHDS data permit issued by a Health Data Access Body (HDAB) into an **active cryptographic coordination token**, enabling secure (cross-border) data exchange and combination of healthdata from multiple data sources while keeping personal identifiers (ie. BSN (the Dutch Citizen Service Number)) decentralized at the data holders.
 
 This proof-of-concept code is accompanied by a detailed whitepaper that describes the full protocol design, security considerations, EHDS compliance rationale, and potential extensions for additional analysis modes.
 
